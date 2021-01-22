@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "8f05b1d2-743d-419c-8d3a-86937cab0460",
+		"name": "Opeq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Mr\",\n    \"firstName\": \"Mohammad yasin\",\n    \"lastName\": \"Parsi\",\n    \"email\": \"mohammadyasinparsi@hotmail.com\",\n    \"password\": \"921615002@a\",\n    \"confirmPassword\": \"921615002@a\",\n    \"acceptTerms\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify-email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"7B063790880BBD3202D1B7C544C4BF0EFB3C1A534A1AF2A2D0BFD66D600661E64260D4CCF69287CD\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/verify-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						"verify-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MTEzMjg0NTgsImV4cCI6MTYxMTMyOTM1OCwiaWF0IjoxNjExMzI4NDU4fQ.rFR1r6elAGV4JN5OPjj99zDbwy5cOpcEvp0O9Gg5gGY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_startLat\": 32.6539,\n    \"_startLng\": 51.6660,\n    \"_endLat\": 35.6892,\n    \"_endLng\": 51.3890,\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MTEzMjczNzUsImV4cCI6MTYxMTMyODI3NSwiaWF0IjoxNjExMzI3Mzc1fQ.aZ82SYrJU216wK2KDXqJYnR-ftonbi4o2FS72p1WDqU\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/save-location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						"save-location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mohammadyasinparsi@hotmail.com\",\n    \"password\": \"921615002@a\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllMyLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MTEzMjg0NTgsImV4cCI6MTYxMTMyOTM1OCwiaWF0IjoxNjExMzI4NDU4fQ.rFR1r6elAGV4JN5OPjj99zDbwy5cOpcEvp0O9Gg5gGY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/accounts/GetAllMyLocation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						"GetAllMyLocation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
